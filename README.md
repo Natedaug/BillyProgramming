@@ -15,4 +15,7 @@ You too can be a little billy achiever.
 - I see you have a sierra nevada, tasy brew. got some tatiqoues in the oven.
 
 - Nice. I got some cheese, chicken and whiskey to go along with it.
+
 - hopefully that is provolne cheese from imos.
+
+- imo's is overrated

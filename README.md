@@ -19,3 +19,5 @@ You too can be a little billy achiever.
 - hopefully that is provolne cheese from imos.
 
 - imo's is incredible. buddy
+
+- Solo flying here . git -r done

@@ -24,5 +24,10 @@ You too can be a little billy achiever.
 
 - No way buddy, I think I am starting to git the hang of this. Nothing to be afraid of.
 
+-I was wishing I had this at work, I was doing a little reading on z shell for PC. Seems possible.
+
+- I am adding the add, commit, push. Still not sure what git add is doing.Is that kind of priming it to be committed?
+
+
 
 

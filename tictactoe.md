@@ -2,11 +2,10 @@
 ## Battle to the death
 ---
 
-`Current Player:` Natedaug
+`Current Player:` Dave
 
 
 | 0 | x |   |
 |---|---|---|
-|   |   |   |
-|---|---|---|
+|   | 0 |   |
 |   |   |   |

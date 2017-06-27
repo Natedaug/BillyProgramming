@@ -21,3 +21,8 @@ You too can be a little billy achiever.
 - imo's is incredible. buddy
 
 - Solo flying here . git -r done
+
+- No way buddy, I think I am starting to git the hang of this. Nothing to be afraid of.
+
+
+

@@ -28,6 +28,5 @@ You too can be a little billy achiever.
 
 - I am adding the add, commit, push. Still not sure what git add is doing.Is that kind of priming it to be committed?
 
-
-
+- Yeah pretty much
 

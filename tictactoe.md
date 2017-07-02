@@ -2,10 +2,9 @@
 ## Battle to the death
 ---
 
-`Current Player:` Dave's final futile move
+`Current Player:` rematch #2'
 
 
-| 0 | x | x |
-|---|---|---|
-| 0 | 0 | x |
-| x | x | x |
+|   |   |  |
+|   | 0 |  |
+|   |   |  |

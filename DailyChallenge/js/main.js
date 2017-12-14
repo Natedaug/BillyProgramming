@@ -26,7 +26,7 @@ $(function() {
       $calHeader.css("background-color", monthColor).find("h1").text(months[currentMonth - 1] + " " + currentYear);
       $weekDays.find("div").css("color", monthColor);
       $calContent.find(".today").css("background-color", monthColor);
-      d();
+      setDimensions();
   }
 
   function getDaysOfMonth() { //was h
@@ -47,7 +47,7 @@ $(function() {
       }
   }
 
-  function d() {
+  function setDimensions() {
       var t;
       var cal = $("#calendar").css("width", width + "px");
       cal.find(t = "#calendar_weekdays, #calendar_content").css("width", width + "px").find("div").css({
@@ -84,7 +84,7 @@ $(function() {
   var width = 480; //was e
   var currentYear = 2013; //was t
   var currentMonth = 9; //was n
-  var r = [];
+  //var r = [];
   var months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]; //was i
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; //was s
   var color = ["#16a085", "#1abc9c", "#c0392b", "#27ae60", "#FF6860", "#f39c12", "#f1c40f", "#e67e22", "#2ecc71", "#e74c3c", "#d35400", "#2c3e50"];//was o

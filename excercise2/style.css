@@ -1,0 +1,79 @@
+.container {
+  margin: 0 auto;
+  width: 700px;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+.ui-widget-overlay {
+  opacity: 0.5;
+  filter: Alpha(Opacity=50);
+  background-color: black;
+}
+
+tr p {
+  margin: 10px;
+}
+
+table p {
+  font-weight: bold;
+}
+
+body {
+  background-color: #296eff;
+  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.container {
+  background-color: #fff;
+  margin-top: 40px;
+  border: 5px solid #ddd;
+  box-shadow: 0px 0px 10px #3778ff;
+}
+
+.innerBtn {
+  text-align: right;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #27c9ee;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid white;
+  box-shadow: 0px 0px 2px #7bb0dc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+input:focus {
+  background-color: #f9fdff;
+}
+
+.ui-dialog {
+  width: 330px !important;
+  background-color: #fff;
+}
+
+.ui-dialog input {
+  border: 1px solid #296eff;
+  transition: all .3s ease-in-out;
+}
+
+.ui-dialog input:hover {
+  padding: 5px;
+  transition: all .3s ease-in-out;
+}
+
+.ui-dialog-titlebar {
+  background-color: #27c9ee;
+  color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  border: 1px solid #296eff;
+}

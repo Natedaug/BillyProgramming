@@ -1,0 +1,282 @@
+<div class="container">
+
+  <table id="myTable" class="display">
+    <thead>
+      <tr>
+        <th>Display Name</th>
+        <th>Description</th>
+        <th>Aircraft</th>
+        <th>Vehicles</th>
+        <th>Location</th>
+      </tr>
+
+
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js">
+
+
+  <link rel="stylesheet" href="https://rawgit.com/daneden/animate.css/master/animate.min.css">
+
+    </thead>
+    <tbody>
+      <!-- imported  -->
+    </tbody>
+  </table>
+
+
+  <script>
+    // data
+var data = [
+  [
+    "David Schreiter",
+    "A1",
+    'false',
+    "true",
+    "Dallas, Texas",
+  ],
+  [
+    "Robert Frost",
+    "A1",
+    "Edinburgh",
+    "8422",
+    "Boston, Massachusetts",
+  ],
+  [
+    "L.V. Beethoven",
+    "A5",
+    "Edinburgh",
+    "8422",
+    "Bonn, Germany",
+  ],
+  [
+    "W. A. Mozart",
+    "A2",
+    "Edinburgh",
+    "8422",
+    "Salzburg, Austria",
+  ]
+]
+
+
+// loads json in table
+$(document).ready(function() {
+  $('#myTable').DataTable({
+    data: data
+  });
+
+  //setup
+  $("#dialog").dialog({
+    autoOpen: false, // Do not open on page load
+    modal: true // Freeze the background behind the overlay
+  });
+  //launch dialog
+  $("#btn").click(function() {
+    $('#dialog').dialog('open');
+  });
+
+
+  //setup 
+  $("#confirmDialog").dialog({
+      autoOpen: false, // Do not open on page load
+      modal: true // Freeze the background behind the overlay
+    })
+    //launch confirmDialog, confirm or cancel
+  $("#saveBtn").click(function() {
+    $("#confirmDialog").dialog('open');
+  });
+
+  //confirm, update page
+  $("#confirmBtn").click(function() {
+    $("#confirmDialog").dialog('close');
+    $("#dialog").dialog("close");;
+  });
+  //cancel confirmation
+  $("#confirmCancelBtn").click(function() {
+    $("#confirmDialog").dialog("close");
+  });
+
+  //Cancel, close Edit Parking Dialog
+  $("#cancelBtn").click(function() {
+    $("#dialog").dialog("close");;
+  });
+
+
+  $('#btn').click(function() {
+    $('#dialog').addClass('animated pulse');
+  });
+  $('#saveBtn').click(function() {
+    $('#confirmDialog').addClass('animated pulse');
+  });
+  $('button').hover(function() {
+    $('button').addClass('animated bounce');
+  });
+
+
+
+});
+
+  </script>
+
+
+
+<style>
+  .container {
+  margin: 0 auto;
+  width: 700px;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+.ui-widget-overlay {
+  opacity: 0.5;
+  filter: Alpha(Opacity=50);
+  background-color: black;
+}
+
+tr p {
+  margin: 10px;
+}
+
+table p {
+  font-weight: bold;
+}
+
+body {
+  background-color: #296eff;
+  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.container {
+  background-color: #fff;
+  margin-top: 40px;
+  border: 5px solid #ddd;
+  box-shadow: 0px 0px 10px #3778ff;
+}
+
+.innerBtn {
+  text-align: right;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #27c9ee;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid white;
+  box-shadow: 0px 0px 2px #7bb0dc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+input:focus {
+  background-color: #f9fdff;
+}
+
+.ui-dialog {
+  width: 330px !important;
+  background-color: #fff;
+}
+
+.ui-dialog input {
+  border: 1px solid #296eff;
+  transition: all .3s ease-in-out;
+}
+
+.ui-dialog input:hover {
+  padding: 5px;
+  transition: all .3s ease-in-out;
+}
+
+.ui-dialog-titlebar {
+  background-color: #27c9ee;
+  color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  border: 1px solid #296eff;
+}
+
+</style>
+
+
+
+
+  <div id="dialog" title="Edit Parking Spot">
+    <table>
+      <tr>
+        <td>
+          <p>Name</p>
+        </td>
+        <td>
+          <input id="username" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Description</p>
+        </td>
+        <td>
+          <input type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Aircraft</p>
+        </td>
+        <td>
+          <input type="checkbox" class="editor-active">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Vehicle</p>
+        </td>
+        <td>
+          <input type="checkbox" class="editor-active">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Comment:</p>
+        </td>
+        <td>
+          <input type="text">
+        </td>
+      </tr>
+    </table>
+    <div class="innerBtn">
+      <button id="saveBtn">Save</button>
+      <button id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+
+
+  <div id="confirmDialog" title="Please Confirm Changes">
+    <p>Your changes will be updated to the spreadsheet.</p>
+    <p> Please Note: In progress... </p>
+    <div class="innerBtn">
+      <button id="confirmBtn">Confirm</button>
+      <button id="confirmCancelBtn">Cancel</button>
+    </div>
+  </div>
+
+
+  <!-- Temp button for E -->
+  <button id="btn">Temp for "e" button</button>
+
+</div>
+
+
+
+
+
+<!-- jquery -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>

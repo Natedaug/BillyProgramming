@@ -100,45 +100,46 @@
   crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
   <script>
-    var data = [
-      {
-        "display name":"David Schreiter",
-        "description":"A1",
-        "aircraft":"false",
-        "vehicles":"true",
-        "Location":"Dallas, Texas"
-      },
-      {
-        "display name":"David Schreiter",
-        "description":"A1",
-        "aircraft":"false",
-        "vehicles":"true",
-        "Location":"Dallas, Texas"
-      },
-      {
-        "display name":"David Schreiter",
-        "description":"A1",
-        "aircraft":"false",
-        "vehicles":"true",
-        "Location":"Dallas, Texas"
-      },
-      {
-        "display name":"David Schreiter",
-        "description":"A1",
-        "aircraft":"false",
-        "vehicles":"true",
-        "Location":"Dallas, Texas"
-      }
-    ];
-
-
     $(document).ready(function() {
-      $('#myTable').DataTable({
+      var data = [
+        {
+          "display name":"Billy Schreiter",
+          "description":"A1",
+          "aircraft":"false",
+          "vehicles":"true",
+          "Location":"Dallas, Texas"
+        },
+        {
+          "display name":"David Schreiter",
+          "description":"A1",
+          "aircraft":"false",
+          "vehicles":"true",
+          "Location":"Dallas, Texas"
+        },
+        {
+          "display name":"David Schreiter",
+          "description":"A1",
+          "aircraft":"false",
+          "vehicles":"true",
+          "Location":"Dallas, Texas"
+        },
+        {
+          "display name":"David Schreiter",
+          "description":"A1",
+          "aircraft":"false",
+          "vehicles":"true",
+          "Location":"Dallas, Texas"
+        }
+      ];
+  
+      var $modal = $("#dialog");
+    
+      var table = $('#myTable').DataTable({
         data: data,
         "columns": 
             [ 
               {"mRender": function ( data, type, row ) {
-                return '<a href=add.html?id='+row.id+'>Edit</a>';
+                return '<button class="editBtn">E</button>';
                 }
               },
               { "data": "display name"},
@@ -150,14 +151,24 @@
       });
     
       //setup
-      $("#dialog").dialog({
+      $modal.dialog({
         autoOpen: false, // Do not open on page load
         modal: true // Freeze the background behind the overlay
       });
+
+      $('.editBtn').on('click' ,function() {
+        //grabbing data
+        var data = table.row( $(this).parents('tr') ).data();
+        console.log(data);
+        //open and populate modal
+        $modal.dialog('open');
+        //save new data to table
+      })
+
       //launch dialog
-      $("#btn").click(function() {
-        $('#dialog').dialog('open');
-      });
+      // $("#btn").click(function() {
+      //   $('#dialog').dialog('open');
+      // });
     
     
       //setup 
@@ -183,17 +194,6 @@
       //Cancel, close Edit Parking Dialog
       $("#cancelBtn").click(function() {
         $("#dialog").dialog("close");;
-      });
-    
-    
-      $('#btn').click(function() {
-        $('#dialog').addClass('animated pulse');
-      });
-      $('#saveBtn').click(function() {
-        $('#confirmDialog').addClass('animated pulse');
-      });
-      $('button').hover(function() {
-        $('button').addClass('animated bounce');
       });
     
     });

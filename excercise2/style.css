@@ -10,7 +10,9 @@
   filter: Alpha(Opacity=50);
   background-color: black;
 }
-
+table {
+  text-align: center;
+}
 tr p {
   margin: 10px;
 }

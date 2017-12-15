@@ -32,7 +32,7 @@
             <p>Name</p>
           </td>
           <td>
-            <input id="username" type="text">
+            <input name="display name" type="text">
           </td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
             <p>Description</p>
           </td>
           <td>
-            <input type="text">
+            <input name="description" type="text">
           </td>
         </tr>
         <tr>
@@ -48,7 +48,7 @@
             <p>Aircraft</p>
           </td>
           <td>
-            <input type="checkbox" class="editor-active">
+            <input name="aircraft" type="checkbox" class="editor-active">
           </td>
         </tr>
         <tr>
@@ -56,7 +56,7 @@
             <p>Vehicle</p>
           </td>
           <td>
-            <input type="checkbox" class="editor-active">
+            <input name="vehicle" type="checkbox" class="editor-active">
           </td>
         </tr>
         <tr>
@@ -64,7 +64,7 @@
             <p>Comment:</p>
           </td>
           <td>
-            <input type="text">
+            <input name="comment" type="text">
           </td>
         </tr>
       </table>
@@ -107,32 +107,38 @@
           "description":"A1",
           "aircraft":"false",
           "vehicles":"true",
-          "Location":"Dallas, Texas"
+          "Location":"Dallas, Texas",
+          "comment": "fart"
         },
         {
-          "display name":"David Schreiter",
+          "display name":"Billy Schreiter",
           "description":"A1",
           "aircraft":"false",
           "vehicles":"true",
-          "Location":"Dallas, Texas"
+          "Location":"Dallas, Texas",
+          "comment": "fart"
         },
         {
-          "display name":"David Schreiter",
+          "display name":"Buck Schreiter",
           "description":"A1",
           "aircraft":"false",
           "vehicles":"true",
-          "Location":"Dallas, Texas"
+          "Location":"Dallas, Texas",
+          "comment": "fart"
         },
         {
-          "display name":"David Schreiter",
+          "display name":"Frank Schreiter",
           "description":"A1",
           "aircraft":"false",
           "vehicles":"true",
-          "Location":"Dallas, Texas"
+          "Location":"Dallas, Texas",
+          "comment": "fart"
         }
       ];
   
       var $modal = $("#dialog");
+      var $modalInputs = $modal.find('input');
+      var slectedData={};
     
       var table = $('#myTable').DataTable({
         data: data,
@@ -158,10 +164,14 @@
 
       $('.editBtn').on('click' ,function() {
         //grabbing data
-        var data = table.row( $(this).parents('tr') ).data();
-        console.log(data);
+        selectedData = table.row( $(this).parents('tr') ).data();
+        console.log(selectedData);
         //open and populate modal
         $modal.dialog('open');
+        $modalInputs.each( function( index ) {
+          var $this = $( this );
+          $this.val( selectedData[$this.attr('name')] );
+        })
         //save new data to table
       })
 
